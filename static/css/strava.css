@@ -1,0 +1,27 @@
+axis line{
+  stroke: none;
+}
+
+.axis path{
+  stroke: none;
+
+}
+
+.axis text{
+  fill: lightgrey;
+  font-size:30px;
+
+}
+
+.tick line{
+  visibility:hidden;
+}
+
+.year_axis text{
+    font-size:25px;
+    fill: lightgrey;
+}
+
+.left-buffer { margin-left:5px; }
+
+
