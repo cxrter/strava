@@ -13,12 +13,12 @@ axis line{
 
 }
 
-.tick line{
-  visibility:hidden;
-}
-
 .year_axis text{
     font-size:25px;
+    fill: lightgrey;
+}
+.type_axis text{
+    font-size:20px;
     fill: lightgrey;
 }
 

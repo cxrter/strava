@@ -58,14 +58,15 @@ d3.csv("cleaned_data.csv").then(function(data) {
             return d.type == ('Ride');
     })
 
+    month = ['Jan', 'Dec']
     // Add X axis
     var x = d3.scaleLinear()
         .domain([1, 12])
         .range([ 0, width]);
     cycle_svg.append("g")
         .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x).tickValues([]))
-        .attr("class", "axis");
+        .call(d3.axisBottom(x).tickValues([1,12]).tickFormat(function(d, i){return month[i];}))
+        .attr("class", "type_axis");
 
     // Add Y axis
     var y = d3.scaleLinear()
@@ -80,7 +81,7 @@ d3.csv("cleaned_data.csv").then(function(data) {
       .datum(cycle_2020)
       .attr("fill", "none")
       .attr("stroke", "#CEA1C3")
-      .attr("stroke-width", 4)
+      .attr("stroke-width", 8)
       .attr("d", d3.line()
         .x(function(d) { return x(d['month']) })
         .y(function(d) { return y(d['cumulative_dist']) })
@@ -103,7 +104,7 @@ d3.csv("cleaned_data.csv").then(function(data) {
       .datum(cycle_2019)
       .attr("fill", "none")
       .attr("stroke", "grey")
-      .attr("stroke-width", 4)
+      .attr("stroke-width", 6)
       .attr("d", d3.line()
         .x(function(d) { return x(d['month']) })
         .y(function(d) { return y(d['cumulative_dist']) })

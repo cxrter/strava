@@ -45,14 +45,14 @@ var month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct
         .range([ this_height, 0])
     year_svg.append("g")
         .call(d3.axisLeft(y).tickValues([20,40,60]))
-        .attr("class", "axis");
+        .attr("class", "year_axis");
 
     // Add the 2020 line
     const path_2020 = year_svg.append("path")
       .datum(year_2020)
       .attr("fill", "none")
       .attr("stroke", "#B88B4A")
-      .attr("stroke-width", 4)
+      .attr("stroke-width", 8)
       .attr("d", d3.line()
         .x(function(d) { return x(d[0]) })
         .y(function(d) { return y(d[1]) })
@@ -75,7 +75,7 @@ var month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct
       .datum(year_2019)
       .attr("fill", "none")
       .attr("stroke", "grey")
-      .attr("stroke-width", 4)
+      .attr("stroke-width", 6)
       .attr("d", d3.line()
         .x(function(d) { return x(d[0]) })
         .y(function(d) { return y(d[1]) })
